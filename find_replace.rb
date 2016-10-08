@@ -18,7 +18,8 @@ replace = gets.chomp()
 count = data.scan(/\b#{find}\b/).count
 
 # globally substitute "install" for "latest"
-modified_data = data.gsub( /\b#{find}\b/, replace )
+modified_data = data.gsub( /#{find}/, replace )
+# applicationId "com.mirraw.android.rangolidesigns"
 
 # open the file for writing
 File.open("test1.txt", "w") do |f|
