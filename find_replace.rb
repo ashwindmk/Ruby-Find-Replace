@@ -6,11 +6,19 @@ end
 # load the file as a string
 data = File.read("test.txt")
 
+# find word
+puts("\nEnter word to find:")
+find = gets.chomp()
+
+# replace with word
+puts("Enter word to replace:")
+replace = gets.chomp()
+
 # find occurrences
-count = data.scan(/\bline\b/).count
+count = data.scan(/\b#{find}\b/).count
 
 # globally substitute "install" for "latest"
-modified_data = data.gsub( /\bline\b/, 'sentence' )
+modified_data = data.gsub( /\b#{find}\b/, replace )
 
 # open the file for writing
 File.open("test1.txt", "w") do |f|
